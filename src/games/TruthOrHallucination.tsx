@@ -28,6 +28,7 @@ export function TruthOrHallucination({ onPrize }: { onPrize: (c: PrizeCtx) => vo
     const ok = a === s.truth
     setAnswered(a)
     setResults((x) => [...x, ok])
+    emitBugle({ type: 'respuesta', juego: '¿Verdad o Alucinación?', acierto: ok, detalle: `${a === 'timeout' ? 'se le acabó el tiempo' : ok ? 'la clavó' : s.truth ? 'pensó que era alucinación y era verdad' : 'se creyó una alucinación de IA'}: "${s.text.slice(0, 90)}"` })
     if (results.length + 1 === items.length) emitBugle({ type: 'quiz', juego: '¿Verdad o Alucinación?', correctas: results.filter(Boolean).length + (ok ? 1 : 0), total: items.length })
     if (ok) {
       setPoints((p) => p + 100 + Math.round(left * 5))

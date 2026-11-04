@@ -70,7 +70,7 @@ export function Speedrun({ onPrize }: { onPrize: (c: PrizeCtx) => void }) {
           setResult({ wpm, acc, score: Math.round((wpm * acc) / 100), secs })
           setPhase('done')
           sfx.win()
-          emitBugle({ type: 'speedrun', wpm, precision: acc })
+          emitBugle({ type: 'speedrun', wpm, precision: acc, texto: text.title, premio: wpm >= cfg.prizeMinWpm && acc >= cfg.prizeMinAccuracy })
           if (wpm >= cfg.prizeMinWpm && acc >= cfg.prizeMinAccuracy) party()
           else burst(true)
         }
@@ -106,9 +106,11 @@ export function Speedrun({ onPrize }: { onPrize: (c: PrizeCtx) => void }) {
   function saveScore() {
     if (!result || !name.trim()) return
     const e: Entry = { id: crypto.randomUUID(), name: name.trim(), ...result, text: text.title, at: Date.now() }
-    const best = board.reduce((m, x) => Math.max(m, x.score), 0)
-    setBoard([...board, e])
-    if (e.score > best) emitBugle({ type: 'record', jugador: e.name, wpm: e.wpm, precision: e.acc })
+    const prev = [...board].sort((a, b) => b.score - a.score)[0]
+    const next = [...board, e]
+    setBoard(next)
+    if (!prev || e.score > prev.score) emitBugle({ type: 'record', jugador: e.name, wpm: e.wpm, precision: e.acc, anterior: prev && { jugador: prev.name, wpm: prev.wpm } })
+    else emitBugle({ type: 'speedrun_guardado', jugador: e.name, wpm: e.wpm, puesto: next.filter((x) => x.score > e.score).length + 1, total: next.length })
     setSavedId(e.id)
     sfx.ok()
   }

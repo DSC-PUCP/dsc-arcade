@@ -101,16 +101,25 @@ async function line(req: Request, key: string) {
   if (mode === 'chat') payload.reasoning_effort = 'low'
   else payload.response_format = { type: 'json_object' }
 
+  const t0 = Date.now()
   const r = await fetch(`${GROQ}/chat/completions`, {
     method: 'POST',
     headers: { authorization: `Bearer ${key}`, 'content-type': 'application/json' },
     body: JSON.stringify(payload),
   })
-  if (r.status === 429) return json(429, { error: 'rate_limited' }) // sin reintento: el cliente usa el banco offline
-  if (!r.ok) return json(502, { error: 'upstream', status: r.status })
-  const data = (await r.json()) as { choices?: { message?: { content?: string } }[] }
+  const log = (extra: Record<string, unknown>) => console.log(JSON.stringify({ bugle: 'line', mode, model: MODELS[mode], status: r.status, ms: Date.now() - t0, ...extra }))
+  if (r.status === 429) {
+    log({})
+    return json(429, { error: 'rate_limited' }) // sin reintento: el cliente usa el banco offline
+  }
+  if (!r.ok) {
+    log({ body: (await r.text()).slice(0, 300) })
+    return json(502, { error: 'upstream', status: r.status })
+  }
+  const data = (await r.json()) as { choices?: { message?: { content?: string } }[]; usage?: { total_tokens?: number } }
   const { frase, emocion } = parseModel(data.choices?.[0]?.message?.content ?? '')
   const safe = safeLine(frase)
+  log({ tokens: data.usage?.total_tokens, filtered: !safe, frase: safe ?? frase.slice(0, 120) })
   if (!safe) return json(422, { error: 'filtered' })
   return json(200, { frase: safe, emocion: MOODS.includes(emocion) ? emocion : 'happy' })
 }
@@ -127,10 +136,13 @@ async function transcribe(req: Request, key: string) {
   fd.append('language', 'es')
   fd.append('response_format', 'json')
   fd.append('temperature', '0')
+  const t0 = Date.now()
   const r = await fetch(`${GROQ}/audio/transcriptions`, { method: 'POST', headers: { authorization: `Bearer ${key}` }, body: fd })
+  if (!r.ok) console.log(JSON.stringify({ bugle: 'transcribe', status: r.status, ms: Date.now() - t0 }))
   if (r.status === 429) return json(429, { error: 'rate_limited' })
   if (!r.ok) return json(502, { error: 'upstream', status: r.status })
   const data = (await r.json()) as { text?: string }
+  console.log(JSON.stringify({ bugle: 'transcribe', status: r.status, ms: Date.now() - t0, kb: Math.round(buf.byteLength / 1024), chars: data.text?.length ?? 0 }))
   return json(200, { text: normalize(data.text ?? '').slice(0, 500) })
 }
 
@@ -139,7 +151,10 @@ export async function POST(req: Request) {
   const key = process.env.GROQ_API_KEY
   const stand = process.env.STAND_KEY
   if (!key || !stand) return json(500, { error: 'not_configured' })
-  if (req.headers.get('x-stand-key') !== stand) return json(401, { error: 'unauthorized' })
+  if (req.headers.get('x-stand-key') !== stand) {
+    console.log(JSON.stringify({ bugle: action, status: 401 }))
+    return json(401, { error: 'unauthorized' })
+  }
   const ip = (req.headers.get('x-forwarded-for') ?? 'x').split(',')[0].trim()
   try {
     if (action === 'line') {
@@ -151,7 +166,8 @@ export async function POST(req: Request) {
       return await transcribe(req, key)
     }
     return json(404, { error: 'not_found' })
-  } catch {
+  } catch (e) {
+    console.error(JSON.stringify({ bugle: action, status: 500, error: String(e) }))
     return json(500, { error: 'internal' })
   }
 }

@@ -40,6 +40,7 @@ export function LogoGuess({ onPrize }: { onPrize: (c: PrizeCtx) => void }) {
     const ok = name === r.logo.name
     setPicked(name)
     setResults((x) => [...x, ok])
+    emitBugle({ type: 'respuesta', juego: 'Adivina el Logo', acierto: ok, detalle: ok ? `reconoció el logo de ${r.logo.name}` : `no reconoció el logo de ${r.logo.name}${name ? `, dijo ${name}` : ', se le acabó el tiempo'}` })
     if (results.length + 1 === rounds.length) emitBugle({ type: 'quiz', juego: 'Adivina el Logo', correctas: results.filter(Boolean).length + (ok ? 1 : 0), total: rounds.length })
     if (ok) {
       setPoints((p) => p + 100 + Math.round(left * 10))

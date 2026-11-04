@@ -13,7 +13,7 @@ import { TruthOrHallucination } from './games/TruthOrHallucination'
 import { Galeria } from './games/Galeria'
 import { Attract } from './components/Attract'
 import { PHOTOS } from './lib/gallery'
-import { BugleControls, BugleStage } from './components/BugleLive'
+import { BugleControls, BugleDebug, BugleStage } from './components/BugleLive'
 import { setGame } from './lib/bugle/orchestrator'
 
 type Screen = 'hub' | 'ruleta' | 'galeria' | GameId
@@ -154,6 +154,7 @@ export default function App() {
       )}
 
       <BugleStage />
+      <BugleDebug />
       {attract && <Attract slideSeconds={attractCfg.slideSeconds} onExit={exitAttract} />}
     </div>
   )

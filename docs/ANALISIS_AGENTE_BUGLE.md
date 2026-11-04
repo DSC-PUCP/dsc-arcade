@@ -15,6 +15,13 @@
 - Contexto enviado: juego activo, último evento (≤90 s), minutos sin interacción, top 3 del Speedrun, hora, nombre del evento, últimas transcripciones ambientales y las 3 últimas frases (para no repetir).
 - UI: botón 🐧 en la topbar (activar, guardar `STAND_KEY` en localStorage); con Bugle activo aparecen 🎙️/🚫 (mic) y 🗣️/🤐 (voz, `speechSynthesis.cancel()` inmediato). Aviso fijo abajo a la izquierda cuando el mic escucha; botón 🎤 abajo a la derecha (o F2 mantenida) para hablarle. Bugle aparece animado con el mood mientras habla, sin globo.
 
+**v1.1 (2026-11-04):**
+- **Bolsa de hechos:** todo evento de los juegos se acumula (últimos 10 min, máx. 20), aunque Bugle esté apagado. Cada frase recibe `hechosNuevos` (desde su última frase), `hechosAnteriores` y un resumen de aciertos y fallos. Eventos nuevos: inicio de partida del Debug, bug fallado (equivocado o por tiempo), cada respuesta de Logos y de Verdad o Alucinación (con el enunciado), y puesto en el ranking del Speedrun (el récord incluye a quién superó). Los eventos chicos solo se suman a la bolsa; los grandes (`BIG_EVENTS` en `bus.ts`) además disparan una frase si pasaron ≥12 s desde la anterior.
+- **Prompt:** describe la *esencia* por situación (récord → reto público; fallo en Verdad o Alucinación → sarcasmo sobre las IAs; etc.) sin frases fijas, y exige variar la estructura frente a `frasesRecientesTuyas`.
+- **Voz:** selector en el panel 🐧 (automática o fijada), tono y velocidad. La automática prefiere voces masculinas neuronales. Chrome no trae voces masculinas de Google en español: usa las del sistema (Raúl, Pablo) o Edge.
+- **Depuración:** logs `[bugle:*]` con colores en la consola y un panel con **F9** que muestra el estado, el log en vivo (150 entradas, en memoria), el último contexto enviado, forzar frase, probar voz y simular eventos. El backend escribe una línea JSON por petición (modelo, estado, ms, tokens, si se filtró), visible en Vercel → Logs.
+- **Frontend vs. backend:** el backend es un proxy sin estado (Groq + prompt + filtro + STAND_KEY + límite). Todo lo demás (turnos, bolsa, contexto, VAD, historial, voz, banco offline) vive en el navegador.
+
 **Diferencias con el diseño:**
 - **VAD por energía** con piso de ruido adaptativo, no Silero: evita cargar ONNX/WASM. Si en el hall da muchos falsos positivos, subir `vadThreshold` o migrar a `@ricky0123/vad-web`.
 - Half-duplex: el mic descarta lo grabado mientras Bugle habla, durante la grabación de pulsar-para-hablar y 500 ms después.

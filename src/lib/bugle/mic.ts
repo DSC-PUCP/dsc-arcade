@@ -64,7 +64,8 @@ export interface AmbientOpts {
   threshold: number
   maxSeconds: number
   isBlocked: () => boolean
-  onUtterance: (b: Blob) => void
+  onUtterance: (b: Blob, seconds: number) => void
+  onDiscard?: (why: string) => void
   onLevel?: (voice: boolean) => void
 }
 
@@ -78,18 +79,20 @@ export async function startAmbient(o: AmbientOpts) {
   let lastVoice = 0
   let stopped = false
 
-  const finish = async (keep: boolean) => {
+  const finish = async (keep: boolean, why = '') => {
     const r = cur
     cur = null
     if (!r) return
+    const secs = (performance.now() - startedAt) / 1000
     const b = await r.stop()
-    if (keep && b && !stopped && !o.isBlocked()) o.onUtterance(b)
+    if (keep && b && !stopped && !o.isBlocked()) o.onUtterance(b, secs)
+    else if (!stopped) o.onDiscard?.(why || (o.isBlocked() ? 'Bugle estaba hablando' : 'sin audio'))
   }
 
   const id = window.setInterval(() => {
     const now = performance.now()
     if (o.isBlocked()) {
-      if (cur) void finish(false) // half-duplex: descartar lo que se grabó mientras Bugle habla
+      if (cur) void finish(false, 'half-duplex (Bugle habla)') // half-duplex: descartar lo que se grabó mientras Bugle habla
       return
     }
     const v = rms()
@@ -107,8 +110,9 @@ export async function startAmbient(o: AmbientOpts) {
     }
     if (cur) {
       const len = now - startedAt
-      if (len > o.maxSeconds * 1000) void finish(voiceMs > 500)
-      else if (now - lastVoice > 900) void finish(voiceMs > 500)
+      const why = voiceMs > 500 ? '' : `muy poca voz (${voiceMs} ms)`
+      if (len > o.maxSeconds * 1000) void finish(voiceMs > 500, why)
+      else if (now - lastVoice > 900) void finish(voiceMs > 500, why)
     }
   }, 50)
 

@@ -75,6 +75,7 @@ export function DebugChallenge({ onPrize }: { onPrize: (c: PrizeCtx) => void }) 
     startedAt.current = Date.now()
     setNow(Date.now())
     setPhase('ready')
+    emitBugle({ type: 'debug_inicio', jugadores: list })
   }
 
   function beginTurn() {
@@ -109,10 +110,11 @@ export function DebugChallenge({ onPrize }: { onPrize: (c: PrizeCtx) => void }) 
       setPlayers((ps) => ps.map((p) => (p.name === current ? { ...p, time: p.time + took, hits: p.hits + 1 } : p)))
       sfx.ok()
       burst(true)
-      emitBugle({ type: 'bug_chapado', jugador: current })
+      emitBugle({ type: 'bug_chapado', jugador: current, segundos: Math.round(took * 10) / 10 })
     } else {
       setMarks(picked ? { [picked]: 'wrong', [snippet.bug]: 'answer' } : { [snippet.bug]: 'answer' })
       sfx.error()
+      emitBugle({ type: 'bug_fallado', jugador: current, motivo: o === 'timeout' ? 'tiempo' : 'equivocado' })
     }
     setPhase('reveal')
   }
@@ -141,7 +143,7 @@ export function DebugChallenge({ onPrize }: { onPrize: (c: PrizeCtx) => void }) 
     }
     if (out.length) {
       sfx.lose()
-      emitBugle({ type: 'eliminado', jugadores: out })
+      emitBugle({ type: 'eliminado', jugadores: out, quedan: alive.length })
     }
     setPhase('roundEnd')
   }
