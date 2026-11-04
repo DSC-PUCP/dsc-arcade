@@ -1,0 +1,74 @@
+# Pages CMS (https://app.pagescms.org) — solo expone la galería de eventos.
+# Las fotos originales se guardan en media/galeria/ y el build genera versiones optimizadas en /galeria/.
+settings:
+  content:
+    merge: true
+
+media:
+  input: media/galeria
+  output: /galeria
+  rename: safe
+  extensions: [jpg, jpeg, png, webp, avif]
+
+content:
+  - name: eventos
+    label: Galería · Eventos y proyectos
+    type: collection
+    path: content/eventos
+    format: json
+    filename: "{year}-{month}-{primary}.json"
+    view:
+      fields: [nombre, fecha, tipo, publicado]
+      primary: nombre
+      sort: [fecha, nombre]
+      default:
+        sort: fecha
+        order: desc
+    fields:
+      - name: nombre
+        label: Nombre del evento o proyecto
+        type: string
+        required: true
+      - name: fecha
+        label: Fecha
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: tipo
+        label: Tipo
+        type: select
+        required: true
+        default: evento
+        options:
+          values:
+            - { value: evento, label: Evento }
+            - { value: taller, label: Taller }
+            - { value: hackathon, label: Hackathon }
+            - { value: proyecto, label: Proyecto }
+            - { value: comunidad, label: Comunidad }
+      - name: lugar
+        label: Lugar
+        type: string
+      - name: descripcion
+        label: Descripción corta
+        description: Se muestra al abrir una foto. 1–2 oraciones.
+        type: text
+      - name: publicado
+        label: Publicado
+        description: Desmarca para ocultarlo sin borrarlo.
+        type: boolean
+        default: true
+      - name: fotos
+        label: Fotos
+        type: object
+        list: true
+        required: true
+        fields:
+          - name: imagen
+            label: Foto
+            type: image
+            required: true
+          - name: descripcion
+            label: Descripción de la foto (opcional)
+            type: string

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { config, type GameId } from './lib/config'
 import type { PrizeCtx } from './lib/prize'
 import { isMuted, setMuted, sfx } from './lib/sfx'
@@ -10,8 +10,13 @@ import { DebugChallenge } from './games/DebugChallenge'
 import { Speedrun } from './games/Speedrun'
 import { LogoGuess } from './games/LogoGuess'
 import { TruthOrHallucination } from './games/TruthOrHallucination'
+import { Galeria } from './games/Galeria'
+import { Attract } from './components/Attract'
+import { PHOTOS } from './lib/gallery'
 
-type Screen = 'hub' | 'ruleta' | GameId
+type Screen = 'hub' | 'ruleta' | 'galeria' | GameId
+
+const screenFromPath = (): Screen => (window.location.pathname.replace(/\/+$/, '') === '/galeria' ? 'galeria' : 'hub')
 
 const GAMES: { id: GameId; emoji: string; title: string; desc: string; tag: string; color: string }[] = [
   { id: 'debug', emoji: '🐛', title: 'Debug Challenge', desc: 'En fila india: encuentra el bug en 15 s o quedas fuera.', tag: 'Grupal', color: 'var(--lime)' },
@@ -23,7 +28,8 @@ const GAMES: { id: GameId; emoji: string; title: string; desc: string; tag: stri
 const TAGLINES = ['¿Puedes encontrar el bug en 15 segundos? 🐛', '¿Escribes código más rápido que un compilador? ⌨️', '¿Distingues una verdad de una alucinación de IA? 🤖', 'Juega, gana premios y únete a la comunidad 💚']
 
 export default function App() {
-  const [screen, setScreen] = useState<Screen>('hub')
+  const [screen, setScreen] = useState<Screen>(screenFromPath)
+  const [attract, setAttract] = useState(false)
   const [prizeCtx, setPrizeCtx] = useState<PrizeCtx>({})
   const [showQR, setShowQR] = useState(false)
   const [muted, setM] = useState(isMuted())
@@ -34,11 +40,38 @@ export default function App() {
     return () => clearInterval(id)
   }, [])
 
+  // URL propia solo para la galería (/galeria); el resto vive en "/"
+  useEffect(() => {
+    const onPop = () => setScreen(screenFromPath())
+    window.addEventListener('popstate', onPop)
+    return () => window.removeEventListener('popstate', onPop)
+  }, [])
+
   const go = (s: Screen) => {
     sfx.click()
+    const path = s === 'galeria' ? '/galeria' : '/'
+    if (window.location.pathname !== path) window.history.pushState(null, '', path)
     setScreen(s)
     window.scrollTo(0, 0)
   }
+
+  // Modo atracción: tras X segundos sin interacción en el menú, rotan fotos de la comunidad
+  const attractCfg = config.attract
+  useEffect(() => {
+    if (!attractCfg.enabled || !PHOTOS.length || screen !== 'hub' || attract || showQR) return
+    let t = window.setTimeout(() => setAttract(true), attractCfg.idleSeconds * 1000)
+    const reset = () => {
+      clearTimeout(t)
+      t = window.setTimeout(() => setAttract(true), attractCfg.idleSeconds * 1000)
+    }
+    const evs = ['pointermove', 'pointerdown', 'keydown', 'wheel'] as const
+    evs.forEach((e) => window.addEventListener(e, reset))
+    return () => {
+      clearTimeout(t)
+      evs.forEach((e) => window.removeEventListener(e, reset))
+    }
+  }, [screen, attract, showQR, attractCfg])
+  const exitAttract = useCallback(() => setAttract(false), [])
   const toPrize = (c: PrizeCtx) => {
     setPrizeCtx(c)
     go('ruleta')
@@ -87,6 +120,9 @@ export default function App() {
                 </button>
               ))}
             </section>
+            <footer className="hub-footer">
+              <button className="link-btn" onClick={() => go('galeria')}>📸 Mira a la comunidad DSC en acción →</button>
+            </footer>
           </>
         )}
         {screen === 'ruleta' && <Ruleta ctx={prizeCtx} />}
@@ -94,6 +130,7 @@ export default function App() {
         {screen === 'speedrun' && <Speedrun onPrize={toPrize} />}
         {screen === 'logos' && <LogoGuess onPrize={toPrize} />}
         {screen === 'truth' && <TruthOrHallucination onPrize={toPrize} />}
+        {screen === 'galeria' && <Galeria />}
         </ErrorBoundary>
       </main>
 
@@ -101,10 +138,15 @@ export default function App() {
         <div className="overlay" onClick={() => setShowQR(false)}>
           <div className="card modal pop center" onClick={(e) => e.stopPropagation()}>
             <Community />
-            <button className="btn" onClick={() => setShowQR(false)}>Cerrar</button>
+            <div className="row" style={{ justifyContent: 'center' }}>
+              <button className="btn white" onClick={() => { setShowQR(false); go('galeria') }}>📸 Ver galería de eventos</button>
+              <button className="btn" onClick={() => setShowQR(false)}>Cerrar</button>
+            </div>
           </div>
         </div>
       )}
+
+      {attract && <Attract slideSeconds={attractCfg.slideSeconds} onExit={exitAttract} />}
     </div>
   )
 }

@@ -24,3 +24,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Galería generada en build
+public/fotos/
+src/generated/

@@ -1,5 +1,10 @@
 {
   "eventName": "DSC Arcade",
+  "attract": {
+    "enabled": true,
+    "idleSeconds": 60,
+    "slideSeconds": 6
+  },
   "games": {
     "debug": {
       "enabled": true,
