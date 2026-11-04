@@ -5,6 +5,14 @@
     "idleSeconds": 60,
     "slideSeconds": 6
   },
+  "bugle": {
+    "ambientSeconds": 60,
+    "minGapSeconds": 12,
+    "pushToTalkKey": "F2",
+    "maxUtteranceSeconds": 15,
+    "transcriptMemorySeconds": 120,
+    "vadThreshold": 0.02
+  },
   "games": {
     "debug": {
       "enabled": true,

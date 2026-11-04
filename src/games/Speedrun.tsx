@@ -6,6 +6,7 @@ import { sfx } from '../lib/sfx'
 import { burst, party } from '../lib/fx'
 import { Mascot } from '../components/Mascot'
 import type { PrizeCtx } from '../lib/prize'
+import { emitBugle } from '../lib/bugle/bus'
 
 const cfg = config.games.speedrun
 
@@ -69,6 +70,7 @@ export function Speedrun({ onPrize }: { onPrize: (c: PrizeCtx) => void }) {
           setResult({ wpm, acc, score: Math.round((wpm * acc) / 100), secs })
           setPhase('done')
           sfx.win()
+          emitBugle({ type: 'speedrun', wpm, precision: acc })
           if (wpm >= cfg.prizeMinWpm && acc >= cfg.prizeMinAccuracy) party()
           else burst(true)
         }
@@ -104,7 +106,9 @@ export function Speedrun({ onPrize }: { onPrize: (c: PrizeCtx) => void }) {
   function saveScore() {
     if (!result || !name.trim()) return
     const e: Entry = { id: crypto.randomUUID(), name: name.trim(), ...result, text: text.title, at: Date.now() }
+    const best = board.reduce((m, x) => Math.max(m, x.score), 0)
     setBoard([...board, e])
+    if (e.score > best) emitBugle({ type: 'record', jugador: e.name, wpm: e.wpm, precision: e.acc })
     setSavedId(e.id)
     sfx.ok()
   }

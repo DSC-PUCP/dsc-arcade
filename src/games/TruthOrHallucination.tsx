@@ -8,6 +8,7 @@ import { TimerBar } from '../components/TimerBar'
 import { Mascot } from '../components/Mascot'
 import type { PrizeCtx } from '../lib/prize'
 import { Dots, QuizResult } from './QuizShell'
+import { emitBugle } from '../lib/bugle/bus'
 
 const cfg = config.games.truth
 
@@ -27,6 +28,7 @@ export function TruthOrHallucination({ onPrize }: { onPrize: (c: PrizeCtx) => vo
     const ok = a === s.truth
     setAnswered(a)
     setResults((x) => [...x, ok])
+    if (results.length + 1 === items.length) emitBugle({ type: 'quiz', juego: '¿Verdad o Alucinación?', correctas: results.filter(Boolean).length + (ok ? 1 : 0), total: items.length })
     if (ok) {
       setPoints((p) => p + 100 + Math.round(left * 5))
       sfx.ok()

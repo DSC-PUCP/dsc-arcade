@@ -6,6 +6,7 @@ import { burst } from '../lib/fx'
 import type { PrizeCtx } from '../lib/prize'
 import { Prize } from './Prize'
 import { Community } from '../components/Community'
+import { emitBugle } from '../lib/bugle/bus'
 
 const COLORS = ['#7be36f', '#ffd23f', '#b9b3ff', '#ffffff', '#64c462', '#ff9f9f', '#9fd8ff']
 const TYPES: SegmentType[] = ['flores', 'insignia', 'otra', 'sorpresa', 'chocolate', 'custom']
@@ -60,6 +61,7 @@ export function Ruleta({ ctx }: { ctx: PrizeCtx }) {
       if (tickRef.current) clearTimeout(tickRef.current)
       setSpinning(false)
       setResult(pick.s)
+      emitBugle({ type: 'ruleta', premio: pick.s.label })
       if (pick.s.type === 'otra') sfx.ok()
       else {
         sfx.win()

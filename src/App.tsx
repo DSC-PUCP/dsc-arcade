@@ -13,6 +13,8 @@ import { TruthOrHallucination } from './games/TruthOrHallucination'
 import { Galeria } from './games/Galeria'
 import { Attract } from './components/Attract'
 import { PHOTOS } from './lib/gallery'
+import { BugleControls, BugleStage } from './components/BugleLive'
+import { setGame } from './lib/bugle/orchestrator'
 
 type Screen = 'hub' | 'ruleta' | 'galeria' | GameId
 
@@ -39,6 +41,10 @@ export default function App() {
     const id = setInterval(() => setTag((t) => (t + 1) % TAGLINES.length), 3500)
     return () => clearInterval(id)
   }, [])
+
+  useEffect(() => {
+    setGame(screen)
+  }, [screen])
 
   // URL propia solo para la galería (/galeria); el resto vive en "/"
   useEffect(() => {
@@ -88,6 +94,7 @@ export default function App() {
         <span className="spacer" />
         <button className="btn sun sm" onClick={() => { setPrizeCtx({}); go('ruleta') }}>🎡 Ruleta</button>
         <button className="btn white sm" onClick={() => setShowQR(true)}>📱 Comunidad</button>
+        <BugleControls />
         <button className="icon-btn" title={muted ? 'Activar sonido' : 'Silenciar'} onClick={() => { setMuted(!muted); setM(!muted) }}>{muted ? '🔇' : '🔊'}</button>
       </header>
 
@@ -146,6 +153,7 @@ export default function App() {
         </div>
       )}
 
+      <BugleStage />
       {attract && <Attract slideSeconds={attractCfg.slideSeconds} onExit={exitAttract} />}
     </div>
   )

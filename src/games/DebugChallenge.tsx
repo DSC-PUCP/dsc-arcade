@@ -9,6 +9,7 @@ import { useStored } from '../lib/storage'
 import { sfx } from '../lib/sfx'
 import { burst, party, shuffle } from '../lib/fx'
 import type { PrizeCtx } from '../lib/prize'
+import { emitBugle } from '../lib/bugle/bus'
 
 const cfg = config.games.debug
 const PARSED = SNIPPETS.map(parseSnippet)
@@ -108,6 +109,7 @@ export function DebugChallenge({ onPrize }: { onPrize: (c: PrizeCtx) => void }) 
       setPlayers((ps) => ps.map((p) => (p.name === current ? { ...p, time: p.time + took, hits: p.hits + 1 } : p)))
       sfx.ok()
       burst(true)
+      emitBugle({ type: 'bug_chapado', jugador: current })
     } else {
       setMarks(picked ? { [picked]: 'wrong', [snippet.bug]: 'answer' } : { [snippet.bug]: 'answer' })
       sfx.error()
@@ -134,9 +136,13 @@ export function DebugChallenge({ onPrize }: { onPrize: (c: PrizeCtx) => void }) 
       setPhase('winner')
       sfx.win()
       party()
+      emitBugle({ type: 'ganador_debug', jugador: best.name, bugs: best.hits })
       return
     }
-    if (out.length) sfx.lose()
+    if (out.length) {
+      sfx.lose()
+      emitBugle({ type: 'eliminado', jugadores: out })
+    }
     setPhase('roundEnd')
   }
 
