@@ -1,0 +1,45 @@
+{
+  "eventName": "DSC Arcade",
+  "games": {
+    "debug": {
+      "enabled": true,
+      "secondsPerTurn": 15,
+      "hintsPerPlayer": 1,
+      "maxRounds": 4,
+      "levelUpAfterSeconds": [180, 300],
+      "revealSeconds": 4
+    },
+    "speedrun": {
+      "enabled": true,
+      "prizeMinWpm": 25,
+      "prizeMinAccuracy": 90
+    },
+    "logos": {
+      "enabled": true,
+      "rounds": 8,
+      "secondsPerLogo": 10,
+      "prizeMinCorrect": 6
+    },
+    "truth": {
+      "enabled": true,
+      "rounds": 8,
+      "secondsPerStatement": 15,
+      "prizeMinCorrect": 6
+    }
+  },
+  "wheel": {
+    "segments": [
+      { "id": "flores", "label": "Flores amarillas", "emoji": "🌼", "weight": 2, "type": "flores" },
+      { "id": "insignia", "label": "Insignia", "emoji": "🏅", "weight": 3, "type": "insignia" },
+      { "id": "otra", "label": "Gira otra vez", "emoji": "🔁", "weight": 2, "type": "otra" },
+      { "id": "sorpresa", "label": "Premio sorpresa", "emoji": "🎁", "weight": 1, "type": "sorpresa" },
+      { "id": "chocolate", "label": "Chocolate", "emoji": "🍫", "weight": 2, "type": "chocolate" }
+    ]
+  },
+  "links": {
+    "flores": "https://dsc.inf.pucp.edu.pe/flores-amarillas/template",
+    "instagram": "https://www.instagram.com/dsc.pucp/",
+    "linkedin": "https://www.linkedin.com/company/developer-student-club-pucp",
+    "whatsapp": "https://chat.whatsapp.com/COGPv61h53kFwNwWRurhaL"
+  }
+}
