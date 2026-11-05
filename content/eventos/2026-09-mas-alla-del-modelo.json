@@ -1,0 +1,14 @@
+{
+  "nombre": "Más allá del modelo — guía de Machine Learning",
+  "fecha": "2026-09-16",
+  "tipo": "taller",
+  "lugar": "PUCP · H112",
+  "descripcion": "Sesión con Sofía Dextre sobre metodología de modelamiento, selección de modelos, optimización y validación robusta en Machine Learning.",
+  "publicado": true,
+  "fotos": [
+    {
+      "imagen": "/galeria/2026-09-16-mas-alla-del-modelo-01.jpg",
+      "descripcion": "Foto grupal de Más allá del modelo."
+    }
+  ]
+}

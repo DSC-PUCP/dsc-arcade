@@ -1,0 +1,38 @@
+{
+  "nombre": "Ideathon Tecnológica — jornada de deliberación",
+  "fecha": "2026-03-14",
+  "tipo": "evento",
+  "lugar": "PUCP · V202",
+  "descripcion": "Jornada de presentación de propuestas tecnológicas de agrupaciones, con preguntas y deliberación conjunta.",
+  "publicado": true,
+  "fotos": [
+    {
+      "imagen": "/galeria/2026-03-14-ideathon-tecnologica-01.jpg",
+      "descripcion": "Participantes al cierre de la jornada de deliberación de la Ideathon Tecnológica."
+    },
+    {
+      "imagen": "/galeria/2026-03-14-ideathon-tecnologica-02.jpg",
+      "descripcion": "Presentación de la propuesta Círculos PUCP."
+    },
+    {
+      "imagen": "/galeria/2026-03-14-ideathon-tecnologica-03.jpg",
+      "descripcion": "Exposición de una propuesta sobre transporte."
+    },
+    {
+      "imagen": "/galeria/2026-03-14-ideathon-tecnologica-04.jpg",
+      "descripcion": "Presentación de la propuesta Themis Insight."
+    },
+    {
+      "imagen": "/galeria/2026-03-14-ideathon-tecnologica-05.jpg",
+      "descripcion": "Presentación de la propuesta KDA Gota."
+    },
+    {
+      "imagen": "/galeria/2026-03-14-ideathon-tecnologica-06.jpg",
+      "descripcion": "Intercambio de ideas durante la deliberación."
+    },
+    {
+      "imagen": "/galeria/2026-03-14-ideathon-tecnologica-07.jpg",
+      "descripcion": "Participantes durante la jornada en el laboratorio."
+    }
+  ]
+}

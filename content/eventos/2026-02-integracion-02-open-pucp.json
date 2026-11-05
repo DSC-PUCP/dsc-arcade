@@ -1,0 +1,26 @@
+{
+  "nombre": "Segunda integración y OPEN PUCP",
+  "fecha": "2026-02-21",
+  "tipo": "comunidad",
+  "lugar": "PUCP",
+  "descripcion": "Segunda integración y OPEN PUCP, con entrega de certificados, dinámicas grupales y espacios para conectar.",
+  "publicado": true,
+  "fotos": [
+    {
+      "imagen": "/galeria/2026-02-21-integracion-02-open-pucp-01.jpg",
+      "descripcion": "Foto grupal de la segunda integración."
+    },
+    {
+      "imagen": "/galeria/2026-02-21-integracion-02-open-pucp-02.jpg",
+      "descripcion": "Encuentro de los miembros alrededor de la mesa."
+    },
+    {
+      "imagen": "/galeria/2026-02-21-integracion-02-open-pucp-03.jpg",
+      "descripcion": "Intervención durante la integración."
+    },
+    {
+      "imagen": "/galeria/2026-02-21-integracion-02-open-pucp-04.jpg",
+      "descripcion": "Miembros de DSC PUCP durante OPEN PUCP."
+    }
+  ]
+}

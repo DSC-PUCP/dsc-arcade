@@ -1,0 +1,14 @@
+{
+  "nombre": "Dale ojos a tu app — Vision AI",
+  "fecha": "2026-09-10",
+  "tipo": "taller",
+  "lugar": "PUCP · Z216",
+  "descripcion": "Taller práctico para integrar Segment Anything en aplicaciones de visión por computadora y segmentar objetos en imágenes.",
+  "publicado": true,
+  "fotos": [
+    {
+      "imagen": "/galeria/2026-09-10-vision-ai-01.jpg",
+      "descripcion": "Foto grupal al cierre del taller Vision AI."
+    }
+  ]
+}

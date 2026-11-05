@@ -1,0 +1,30 @@
+{
+  "nombre": "Tu primer modelo de Deep Learning",
+  "fecha": "2026-09-03",
+  "tipo": "taller",
+  "lugar": "PUCP",
+  "descripcion": "Introducción práctica a redes neuronales para construir y comprender un primer modelo de Deep Learning.",
+  "publicado": true,
+  "fotos": [
+    {
+      "imagen": "/galeria/2026-09-03-deep-learning-01.jpg",
+      "descripcion": "Foto grupal al cierre del taller de Deep Learning."
+    },
+    {
+      "imagen": "/galeria/2026-09-03-deep-learning-02.jpg",
+      "descripcion": "Vista del aula durante la explicación."
+    },
+    {
+      "imagen": "/galeria/2026-09-03-deep-learning-03.jpg",
+      "descripcion": "Presentación de los contenidos del taller."
+    },
+    {
+      "imagen": "/galeria/2026-09-03-deep-learning-04.jpg",
+      "descripcion": "Acompañamiento durante el trabajo con una laptop."
+    },
+    {
+      "imagen": "/galeria/2026-09-03-deep-learning-05.jpg",
+      "descripcion": "Intervención frente a los participantes."
+    }
+  ]
+}

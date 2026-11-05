@@ -1,0 +1,42 @@
+{
+  "nombre": "Torneo de Vibecoding",
+  "fecha": "2026-06-26",
+  "tipo": "hackathon",
+  "lugar": "PUCP",
+  "descripcion": "Hackathon para construir software con inteligencia artificial generativa, con trabajo en equipos, presentaciones y reconocimientos.",
+  "publicado": true,
+  "fotos": [
+    {
+      "imagen": "/galeria/2026-06-26-torneo-vibecoding-01.jpg",
+      "descripcion": "Entrega de reconocimientos al cierre del Torneo de Vibecoding."
+    },
+    {
+      "imagen": "/galeria/2026-06-26-torneo-vibecoding-02.jpg",
+      "descripcion": "Participantes trabajando en equipos durante el torneo."
+    },
+    {
+      "imagen": "/galeria/2026-06-26-torneo-vibecoding-03.jpg",
+      "descripcion": "Desarrollo del proyecto durante la jornada de programación."
+    },
+    {
+      "imagen": "/galeria/2026-06-26-torneo-vibecoding-04.jpg",
+      "descripcion": "Presentación de una propuesta ante los asistentes."
+    },
+    {
+      "imagen": "/galeria/2026-06-26-torneo-vibecoding-05.jpg",
+      "descripcion": "Conversación sobre una propuesta durante las presentaciones."
+    },
+    {
+      "imagen": "/galeria/2026-06-26-torneo-vibecoding-06.jpg",
+      "descripcion": "Demostración de tecnología en el espacio de aliados."
+    },
+    {
+      "imagen": "/galeria/2026-06-26-torneo-vibecoding-07.jpg",
+      "descripcion": "Equipo con sus reconocimientos al finalizar la competencia."
+    },
+    {
+      "imagen": "/galeria/2026-06-26-torneo-vibecoding-08.jpg",
+      "descripcion": "Sesión con participación remota proyectada en el laboratorio."
+    }
+  ]
+}

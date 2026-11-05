@@ -1,0 +1,26 @@
+{
+  "nombre": "GDG Open Lima — Workshop 1",
+  "fecha": "2026-04-09",
+  "tipo": "taller",
+  "lugar": "",
+  "descripcion": "Primera sesión del ciclo de workshops GDG Open Lima junto a la comunidad DSC PUCP.",
+  "publicado": true,
+  "fotos": [
+    {
+      "imagen": "/galeria/2026-04-09-gdg-workshop-01-01.jpg",
+      "descripcion": "Exposición durante el primer workshop de GDG Open Lima."
+    },
+    {
+      "imagen": "/galeria/2026-04-09-gdg-workshop-01-02.jpg",
+      "descripcion": "Participantes del workshop en el laboratorio."
+    },
+    {
+      "imagen": "/galeria/2026-04-09-gdg-workshop-01-03.jpg",
+      "descripcion": "Foto grupal al cierre del workshop de GDG Open Lima."
+    },
+    {
+      "imagen": "/galeria/2026-04-09-gdg-workshop-01-04.jpg",
+      "descripcion": "Un encuentro entre participantes al terminar el workshop."
+    }
+  ]
+}

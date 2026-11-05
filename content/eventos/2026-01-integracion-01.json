@@ -1,0 +1,34 @@
+{
+  "nombre": "Primera integración DSC PUCP",
+  "fecha": "2026-01-10",
+  "tipo": "comunidad",
+  "lugar": "PUCP",
+  "descripcion": "Encuentro de bienvenida e integración de DSC PUCP, con presentación de la comunidad y dinámicas para conocerse.",
+  "publicado": true,
+  "fotos": [
+    {
+      "imagen": "/galeria/2026-01-10-integracion-01-01.jpg",
+      "descripcion": "Foto grupal de la primera integración."
+    },
+    {
+      "imagen": "/galeria/2026-01-10-integracion-01-02.jpg",
+      "descripcion": "Dinámica de integración al aire libre."
+    },
+    {
+      "imagen": "/galeria/2026-01-10-integracion-01-03.jpg",
+      "descripcion": "Trabajo en equipo durante una dinámica de construcción."
+    },
+    {
+      "imagen": "/galeria/2026-01-10-integracion-01-04.jpg",
+      "descripcion": "Participantes colaborando alrededor de la mesa."
+    },
+    {
+      "imagen": "/galeria/2026-01-10-integracion-01-05.jpg",
+      "descripcion": "Otro equipo durante la actividad de construcción."
+    },
+    {
+      "imagen": "/galeria/2026-01-10-integracion-01-06.jpg",
+      "descripcion": "Momento de encuentro entre los miembros."
+    }
+  ]
+}

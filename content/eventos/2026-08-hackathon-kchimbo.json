@@ -1,0 +1,38 @@
+{
+  "nombre": "Hackathon Kchimbo — Pitch Day",
+  "fecha": "2026-08-29",
+  "tipo": "hackathon",
+  "lugar": "PUCP",
+  "descripcion": "Jornada de pitches de la Hackathon Kchimbo, con presentación de soluciones, retroalimentación y reconocimientos a los equipos.",
+  "publicado": true,
+  "fotos": [
+    {
+      "imagen": "/galeria/2026-08-29-hackathon-kchimbo-01.jpg",
+      "descripcion": "Foto de cierre del Pitch Day de Hackathon Kchimbo."
+    },
+    {
+      "imagen": "/galeria/2026-08-29-hackathon-kchimbo-02.jpg",
+      "descripcion": "Una exposición durante la jornada de Hackathon Kchimbo."
+    },
+    {
+      "imagen": "/galeria/2026-08-29-hackathon-kchimbo-03.jpg",
+      "descripcion": "Un equipo presenta su propuesta durante el Pitch Day."
+    },
+    {
+      "imagen": "/galeria/2026-08-29-hackathon-kchimbo-04.jpg",
+      "descripcion": "Presentación de resultados de un equipo participante."
+    },
+    {
+      "imagen": "/galeria/2026-08-29-hackathon-kchimbo-05.jpg",
+      "descripcion": "Participantes muestran sus certificados al cierre de la jornada."
+    },
+    {
+      "imagen": "/galeria/2026-08-29-hackathon-kchimbo-06.jpg",
+      "descripcion": "Integrantes de DSC PUCP durante el cierre del Pitch Day."
+    },
+    {
+      "imagen": "/galeria/2026-08-29-hackathon-kchimbo-07.jpg",
+      "descripcion": "Intercambio de ideas durante la jornada."
+    }
+  ]
+}

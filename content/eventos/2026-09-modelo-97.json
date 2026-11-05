@@ -1,0 +1,26 @@
+{
+  "nombre": "Tu modelo dice 97%… ¿y eso qué?",
+  "fecha": "2026-09-12",
+  "tipo": "taller",
+  "lugar": "PUCP · Z216",
+  "descripcion": "Taller con Ryan Herrera Ortega para interpretar métricas de Machine Learning y evaluar modelos con criterio técnico.",
+  "publicado": true,
+  "fotos": [
+    {
+      "imagen": "/galeria/2026-09-12-modelo-97-01.jpg",
+      "descripcion": "Foto grupal del taller Tu modelo dice 97%… ¿y eso qué?"
+    },
+    {
+      "imagen": "/galeria/2026-09-12-modelo-97-02.jpg",
+      "descripcion": "Vista de la sesión y del ponente frente al aula."
+    },
+    {
+      "imagen": "/galeria/2026-09-12-modelo-97-03.jpg",
+      "descripcion": "Explicación de resultados y métricas en pantalla."
+    },
+    {
+      "imagen": "/galeria/2026-09-12-modelo-97-04.jpg",
+      "descripcion": "Desarrollo de una explicación en la pizarra."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "nombre": "Primera entrega de certificados — Landing Page",
+  "fecha": "2026-01-31",
+  "tipo": "comunidad",
+  "lugar": "PUCP",
+  "descripcion": "Entrega de certificados y encuentro de los equipos participantes en la hackathon interna de landing pages.",
+  "publicado": true,
+  "fotos": [
+    {
+      "imagen": "/galeria/2026-01-31-entrega-certificados-landing-page-01.jpg",
+      "descripcion": "Participantes con sus certificados de la hackathon de landing pages."
+    },
+    {
+      "imagen": "/galeria/2026-01-31-entrega-certificados-landing-page-02.jpg",
+      "descripcion": "Foto grupal de la comunidad durante la entrega de certificados."
+    },
+    {
+      "imagen": "/galeria/2026-01-31-entrega-certificados-landing-page-03.jpg",
+      "descripcion": "Un grupo de integrantes durante el encuentro de reconocimiento."
+    },
+    {
+      "imagen": "/galeria/2026-01-31-entrega-certificados-landing-page-04.jpg",
+      "descripcion": "La comunidad comparte un recuerdo de la entrega de certificados."
+    }
+  ]
+}
