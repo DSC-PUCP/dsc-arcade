@@ -1,0 +1,18 @@
+{
+  "nombre": "¿Cómo ganar hackathons?",
+  "fecha": "2026-10-30",
+  "tipo": "evento",
+  "lugar": "PUCP · Z205",
+  "descripcion": "Conversatorio con Laura Rodríguez y Sofía Dextre sobre retos, organización de equipos y presentación de propuestas en hackathons.",
+  "publicado": true,
+  "fotos": [
+    {
+      "imagen": "/galeria/2026-10-30-como-ganar-hackathons-01.jpg",
+      "descripcion": "Foto grupal del conversatorio «¿Cómo ganar hackathons?»."
+    },
+    {
+      "imagen": "/galeria/2026-10-30-como-ganar-hackathons-02.jpg",
+      "descripcion": "Participantes al terminar el conversatorio en el campus PUCP."
+    }
+  ]
+}

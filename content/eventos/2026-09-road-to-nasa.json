@@ -1,0 +1,22 @@
+{
+  "nombre": "Road to NASA Space Apps Challenge",
+  "fecha": "2026-09-24",
+  "tipo": "taller",
+  "lugar": "PUCP · Z101",
+  "descripcion": "Sesión de preparación para NASA Space Apps Challenge, con introducción a los retos e ideación de propuestas.",
+  "publicado": true,
+  "fotos": [
+    {
+      "imagen": "/galeria/2026-09-24-road-to-nasa-01.jpg",
+      "descripcion": "Intervención con micrófono durante la sesión."
+    },
+    {
+      "imagen": "/galeria/2026-09-24-road-to-nasa-02.jpg",
+      "descripcion": "Diálogo entre participantes durante la sesión."
+    },
+    {
+      "imagen": "/galeria/2026-09-24-road-to-nasa-03.jpg",
+      "descripcion": "Participación del público en el aula."
+    }
+  ]
+}

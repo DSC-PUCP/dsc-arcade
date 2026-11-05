@@ -1,0 +1,34 @@
+{
+  "nombre": "Quinta integración DSC PUCP — 2026-2",
+  "fecha": "2026-08-22",
+  "tipo": "comunidad",
+  "lugar": "PUCP",
+  "descripcion": "Quinta integración de DSC PUCP, con dinámicas y actividades para conectar a los miembros de la comunidad.",
+  "publicado": true,
+  "fotos": [
+    {
+      "imagen": "/galeria/2026-08-22-integracion-05-vacaciones-01.jpg",
+      "descripcion": "Foto grupal de la quinta integración."
+    },
+    {
+      "imagen": "/galeria/2026-08-22-integracion-05-vacaciones-02.jpg",
+      "descripcion": "Dinámica de presentación entre los participantes."
+    },
+    {
+      "imagen": "/galeria/2026-08-22-integracion-05-vacaciones-03.jpg",
+      "descripcion": "Participantes durante una actividad al aire libre."
+    },
+    {
+      "imagen": "/galeria/2026-08-22-integracion-05-vacaciones-04.jpg",
+      "descripcion": "Momento de conversación alrededor de la mesa."
+    },
+    {
+      "imagen": "/galeria/2026-08-22-integracion-05-vacaciones-05.jpg",
+      "descripcion": "Equipo de participantes junto a la bandera DSC PUCP."
+    },
+    {
+      "imagen": "/galeria/2026-08-22-integracion-05-vacaciones-06.jpg",
+      "descripcion": "Otro equipo de participantes durante el encuentro."
+    }
+  ]
+}

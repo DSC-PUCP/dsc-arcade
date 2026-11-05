@@ -1,0 +1,18 @@
+{
+  "nombre": "GDG Open Lima — Workshop 16 de abril",
+  "fecha": "2026-04-16",
+  "tipo": "taller",
+  "lugar": "",
+  "descripcion": "Sesión del ciclo de workshops GDG Open Lima realizada el 16 de abril.",
+  "publicado": true,
+  "fotos": [
+    {
+      "imagen": "/galeria/2026-04-16-gdg-workshop-16-abril-01.jpg",
+      "descripcion": "Exposición del workshop de GDG Open Lima del 16 de abril."
+    },
+    {
+      "imagen": "/galeria/2026-04-16-gdg-workshop-16-abril-02.jpg",
+      "descripcion": "Vista del laboratorio durante el workshop."
+    }
+  ]
+}

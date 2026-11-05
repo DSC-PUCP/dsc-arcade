@@ -1,0 +1,22 @@
+{
+  "nombre": "Speed Meeting",
+  "fecha": "2026-08-21",
+  "tipo": "comunidad",
+  "lugar": "PUCP",
+  "descripcion": "Encuentro para conocer participantes, conectar intereses y formar equipos dentro de Hack with DSC.",
+  "publicado": true,
+  "fotos": [
+    {
+      "imagen": "/galeria/2026-08-21-speed-meeting-01.jpg",
+      "descripcion": "Presentación del encuentro Speed Meeting."
+    },
+    {
+      "imagen": "/galeria/2026-08-21-speed-meeting-02.jpg",
+      "descripcion": "Conversación entre los participantes."
+    },
+    {
+      "imagen": "/galeria/2026-08-21-speed-meeting-03.jpg",
+      "descripcion": "Trabajo en pequeños grupos durante el encuentro."
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "nombre": "Tercera integración DSC PUCP",
+  "fecha": "2026-04-18",
+  "tipo": "comunidad",
+  "lugar": "PUCP",
+  "descripcion": "Encuentro de integración con dinámicas para fortalecer el trabajo en equipo, la comunicación y la creatividad.",
+  "publicado": true,
+  "fotos": [
+    {
+      "imagen": "/galeria/2026-04-18-integracion-03-01.jpg",
+      "descripcion": "Foto grupal de la tercera integración."
+    },
+    {
+      "imagen": "/galeria/2026-04-18-integracion-03-02.jpg",
+      "descripcion": "Participantes reunidos en el aula."
+    },
+    {
+      "imagen": "/galeria/2026-04-18-integracion-03-03.jpg",
+      "descripcion": "Medición de una estructura construida en equipo."
+    },
+    {
+      "imagen": "/galeria/2026-04-18-integracion-03-04.jpg",
+      "descripcion": "Conversación entre integrantes durante la actividad."
+    },
+    {
+      "imagen": "/galeria/2026-04-18-integracion-03-05.jpg",
+      "descripcion": "Equipos trabajando en la dinámica de construcción."
+    },
+    {
+      "imagen": "/galeria/2026-04-18-integracion-03-06.jpg",
+      "descripcion": "Explicación de ideas en la pizarra."
+    },
+    {
+      "imagen": "/galeria/2026-04-18-integracion-03-07.jpg",
+      "descripcion": "Entrega de un reconocimiento durante el encuentro."
+    },
+    {
+      "imagen": "/galeria/2026-04-18-integracion-03-08.jpg",
+      "descripcion": "Presentación de una estructura realizada en equipo."
+    }
+  ]
+}

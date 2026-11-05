@@ -1,0 +1,38 @@
+{
+  "nombre": "¿Cómo codear con IA en 2026?",
+  "fecha": "2026-08-20",
+  "tipo": "taller",
+  "lugar": "PUCP",
+  "descripcion": "Taller para principiantes sobre desarrollo de software asistido por inteligencia artificial, con contexto, requisitos y especificaciones.",
+  "publicado": true,
+  "fotos": [
+    {
+      "imagen": "/galeria/2026-08-20-codear-con-ia-01.jpg",
+      "descripcion": "Foto grupal al cierre del taller."
+    },
+    {
+      "imagen": "/galeria/2026-08-20-codear-con-ia-02.jpg",
+      "descripcion": "Participantes durante la sesión en el laboratorio."
+    },
+    {
+      "imagen": "/galeria/2026-08-20-codear-con-ia-03.jpg",
+      "descripcion": "Explicación sobre el desarrollo de software con IA."
+    },
+    {
+      "imagen": "/galeria/2026-08-20-codear-con-ia-04.jpg",
+      "descripcion": "Participante trabajando en su laptop."
+    },
+    {
+      "imagen": "/galeria/2026-08-20-codear-con-ia-05.jpg",
+      "descripcion": "Demostración de código durante el taller."
+    },
+    {
+      "imagen": "/galeria/2026-08-20-codear-con-ia-06.jpg",
+      "descripcion": "Acompañamiento a los participantes en el laboratorio."
+    },
+    {
+      "imagen": "/galeria/2026-08-20-codear-con-ia-07.jpg",
+      "descripcion": "Orientación durante el trabajo práctico."
+    }
+  ]
+}

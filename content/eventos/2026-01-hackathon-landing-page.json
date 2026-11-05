@@ -1,0 +1,26 @@
+{
+  "nombre": "Hackathon interna Landing Page",
+  "fecha": "2026-01-17",
+  "tipo": "hackathon",
+  "lugar": "PUCP",
+  "descripcion": "Jornada interna de construcción de landing pages por equipos, con trabajo colaborativo y presentación de propuestas.",
+  "publicado": true,
+  "fotos": [
+    {
+      "imagen": "/galeria/2026-01-17-hackathon-landing-page-01.jpg",
+      "descripcion": "Foto grupal de la hackathon interna de landing pages."
+    },
+    {
+      "imagen": "/galeria/2026-01-17-hackathon-landing-page-02.jpg",
+      "descripcion": "Trabajo en equipo durante la hackathon de landing pages."
+    },
+    {
+      "imagen": "/galeria/2026-01-17-hackathon-landing-page-03.jpg",
+      "descripcion": "Presentación de un equipo en el laboratorio."
+    },
+    {
+      "imagen": "/galeria/2026-01-17-hackathon-landing-page-04.jpg",
+      "descripcion": "Encuentro de la comunidad al terminar la jornada."
+    }
+  ]
+}

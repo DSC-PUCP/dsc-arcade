@@ -1,0 +1,34 @@
+{
+  "nombre": "DSC HACK",
+  "fecha": "2026-10-31",
+  "tipo": "hackathon",
+  "lugar": "NTT DATA",
+  "descripcion": "Hackathon de Hack with DSC con desarrollo de proyectos, presentaciones y premiación.",
+  "publicado": true,
+  "fotos": [
+    {
+      "imagen": "/galeria/2026-10-31-dsc-hack-01.jpg",
+      "descripcion": "Premiación de un equipo de DSC HACK."
+    },
+    {
+      "imagen": "/galeria/2026-10-31-dsc-hack-02.jpg",
+      "descripcion": "Participantes durante la jornada de DSC HACK."
+    },
+    {
+      "imagen": "/galeria/2026-10-31-dsc-hack-03.jpg",
+      "descripcion": "Presentación de un proyecto ante el jurado."
+    },
+    {
+      "imagen": "/galeria/2026-10-31-dsc-hack-04.jpg",
+      "descripcion": "Exposición de una propuesta durante los pitches."
+    },
+    {
+      "imagen": "/galeria/2026-10-31-dsc-hack-05.jpg",
+      "descripcion": "Jurado durante la evaluación de proyectos."
+    },
+    {
+      "imagen": "/galeria/2026-10-31-dsc-hack-06.jpg",
+      "descripcion": "Bienvenida a la jornada de DSC HACK."
+    }
+  ]
+}

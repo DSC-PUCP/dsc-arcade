@@ -1,0 +1,34 @@
+{
+  "nombre": "Taller de Design con IA / Product Design",
+  "fecha": "2026-10-22",
+  "tipo": "taller",
+  "lugar": "PUCP",
+  "descripcion": "Taller de diseño de productos con inteligencia artificial, con exposición y trabajo práctico de los participantes.",
+  "publicado": true,
+  "fotos": [
+    {
+      "imagen": "/galeria/2026-10-22-design-con-ia-01.jpg",
+      "descripcion": "Foto grupal del taller de Design con IA."
+    },
+    {
+      "imagen": "/galeria/2026-10-22-design-con-ia-02.jpg",
+      "descripcion": "Presentación sobre diseño centrado en las personas."
+    },
+    {
+      "imagen": "/galeria/2026-10-22-design-con-ia-03.jpg",
+      "descripcion": "Explicación de Design Thinking con IA."
+    },
+    {
+      "imagen": "/galeria/2026-10-22-design-con-ia-04.jpg",
+      "descripcion": "Conversación entre la ponente y los participantes."
+    },
+    {
+      "imagen": "/galeria/2026-10-22-design-con-ia-05.jpg",
+      "descripcion": "Participación del público durante el taller."
+    },
+    {
+      "imagen": "/galeria/2026-10-22-design-con-ia-06.jpg",
+      "descripcion": "Explicación junto a una demostración en pantalla."
+    }
+  ]
+}
